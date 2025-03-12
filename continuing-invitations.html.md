@@ -21,7 +21,7 @@ wallet.makeOffer(
   proposal,
   offerArgs, //optional
   callbackFunction,
-  offer-id,
+  offer - id,
 );
 ```
 
@@ -35,8 +35,7 @@ wallet.makeOffer(
   
   3. offer
 
-</blockquote>
----
+## </blockquote>
 
 **InvitationSpec Usage**
 
@@ -80,7 +79,10 @@ const start = (zcf) => {
         'Single trade invitation',
       ),
   });
+  return { publicFacet };
 };
+harden(start);
+export { start };
 ```
 
 We can use the UI Kit provided by Agoric to send offers to the smart contract. First, we create an `InvitationSpec` and `proposal` as follows:
@@ -102,7 +104,7 @@ const proposal = {
   }), // AssetB
 };
 
-let offer-id = offer-123;
+let offer-id = 'offer-123';
 ```
 
 We then use the wallet connection object to send our offer:
@@ -113,7 +115,7 @@ wallet.makeOffer(
   proposal,
   undefined, //no offerArgs specified
   () => {},
-  offer-id,
+  offer - id,
 );
 ```
 
@@ -161,7 +163,13 @@ Here's a simplified look at the ticketing contract:
           'Initial event entry invitation'
           ),
     })
-  }
+
+    return {publicFacet};
+  };
+
+  harden(start);
+  export { start };
+
 ```
 
 Notice that this time, our offer handler did not return a string; instead, it returns an object with the `InvitationMakers` property. The UI Kit requires this for continuing invitations. It specifically looks for that object in the return value from the offer handler.
@@ -241,7 +249,10 @@ const start = (zcf) => {
       return { InvitationMakers: upSellInvitationMaker };
     }, 'Initial event entry invitation'),
   });
+  return { publicFacet };
 };
+harden(start);
+export { start };
 ```
 
 ---
@@ -274,7 +285,7 @@ wallet.makeOffer(
   proposal,
   undefined,
   (/* callBack function to catch updates*/) => {},
-  offer-id, // eg offer-124
+  'offer-124', // offerId
 );
 ```
 
@@ -300,9 +311,12 @@ Then call makeOffer as before, with a new `offerId` for this offer.
 
 Repeat the same process for `upgradeSeatInvitation`.
 
+<blockquote>
+  
+  TODO
+  Continuing Invitation Use cases:
 
-Continuing Invitation Use cases:
-
+</blockquote>
 More resources:
 
 - [Office Hours Discussion on continuing invitation pattern](https://github.com/Agoric/agoric-sdk/discussions/9648)
