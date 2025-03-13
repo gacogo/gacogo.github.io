@@ -5,7 +5,11 @@ layout: default
 
 
 > **Listen along!** 🎧 There's an AI-generated podcast companion for this tutorial.
-> [Listen here](https://firebasestorage.googleapis.com/v0/b/alpha-tools-191220.appspot.com/o/agoric-invitation%2FAgoric%20Invitation%20Patterns_%20Contract%20and%20Continuing%20Invitations.wav?alt=media&token=eeac0b4a-8756-4f8b-b195-815ce5ded0fa)
+>
+> <audio controls>
+<source src="https://firebasestorage.googleapis.com/v0/b/alpha-tools-191220.appspot.com/o/agoric-invitation%2FAgoric%20Invitation%20Patterns_%20Contract%20and%20Continuing%20Invitations.wav?alt=media&token=eeac0b4a-8756-4f8b-b195-815ce5ded0fa" type="audio/wav">
+  Your browser does not support the audio element.
+</audio>
 
 ### Notes on Agoric Continuing invitation Pattern.
 
